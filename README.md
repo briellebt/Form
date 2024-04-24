@@ -32,11 +32,11 @@ bar and type "Command Prompt" or "PowerShell"
      git clone https://github.com/briellebt/Form
      cd Form
    
-4.  Run the following command to build the project:
+5.  Run the following command to build the project:
   	  mvn clean package
 This command compiles the source code, runs tests, and packages the application into a JAR file.
 
-5. After building the project, you can run the application using the following command:
+6. After building the project, you can run the application using the following command:
      java -jar target/Form-1.0-SNAPSHOT.jar
 
 This command assumes that the JAR file generated follows the default naming convention for Maven 
