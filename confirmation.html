@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Confirmation Page</h2>
+        <p>Your form has been submitted successfully!</p>
+        
+        <!-- Display the entered data -->
+        <h3>Entered Data</h3>
+        <p><strong>Name:</strong> <span th:text="${entry.name}"></span></p>
+        <p><strong>Age:</strong> <span th:text="${entry.age}"></span></p>
+        <p><strong>Title:</strong> <span th:text="${entry.title}"></span></p>
+        <p><strong>Hometown:</strong> <span th:text="${entry.hometown}"></span></p>
+        
+        <!-- Table of previous entries -->
+        <h3>Previous Entries</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Title</th>
+                    <th>Hometown</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="prevEntry : ${previousEntries}">
+                    <td th:text="${prevEntry.name}"></td>
+                    <td th:text="${prevEntry.age}"></td>
+                    <td th:text="${prevEntry.title}"></td>
+                    <td th:text="${prevEntry.hometown}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
